@@ -971,23 +971,27 @@
         @media (max-width: 768px) {
             /* 导航栏适配 */
             .navbar {
-                width: 95%;
-                padding: 0.5rem;
+                width: 100%;  /* 改为全宽 */
+                padding: 0.5rem 1rem;
                 display: flex;
-                justify-content: center;  /* 确保导航栏居中 */
+                justify-content: center;
+                background: rgba(31, 41, 55, 0.95) !important;
             }
 
             .nav-links {
-                width: 100%;
+                width: auto;  /* 改为自适应宽度 */
                 display: flex;
                 justify-content: center;
-                flex-wrap: wrap;  /* 许导航项换行 */
-                gap: 0.5rem;
+                flex-wrap: wrap;
+                gap: 0.3rem;
+                padding: 0;
+                margin: 0 auto;  /* 添加水平居中 */
             }
 
             .nav-links a {
                 padding: 0.3rem 0.6rem;
                 font-size: 0.85rem;
+                white-space: nowrap;  /* 防止文字换行 */
             }
 
             /* 主页内容适配 */
@@ -1004,7 +1008,7 @@
                 height: 150px;
             }
 
-            /* 作品卡  适配 */
+            /* 作品卡适配 */
             .project-card {
                 flex-direction: column;
                 padding: 1rem;
@@ -1147,7 +1151,7 @@
             <h1>朱尚旺</h1>
             <p>AI艺术创作者 / 设计师</p>
             <p>专注于AI辅助艺术创作，擅长数字艺术与传统设计的融合</p>
-            <a href="./简.jpg" class="download-resume" target="_blank">
+            <a href="./简历.jpg" class="download-resume" target="_blank">
                 下载简历
             </a>
         </div>

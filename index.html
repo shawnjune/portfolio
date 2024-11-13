@@ -813,7 +813,7 @@
             border-radius: 0 4px 4px 0;
         }
 
-        /* ���强文字反馈 */
+        /* 强文字反馈 */
         .timeline-content:hover h3,
         .timeline-content:hover h4 {
             color: #a78bfa;
@@ -956,7 +956,7 @@
             pointer-events: auto !important;
         }
 
-        /* 确保图片点击区域不��与滚动区域重叠 */
+        /* 确保图片点击区域不与滚动区域重叠 */
         .modal-gallery {
             padding: 0 120px; /* 为滚动区域留出空间 */
         }
@@ -965,6 +965,142 @@
             z-index: 2000;
             pointer-events: auto !important;
             cursor: pointer;
+        }
+
+        /* 移动端适配 */
+        @media (max-width: 768px) {
+            /* 导航栏适配 */
+            .navbar {
+                width: 90%;
+                padding: 0.5rem;
+            }
+
+            .nav-links {
+                gap: 0.5rem;
+            }
+
+            .nav-links a {
+                padding: 0.3rem 0.8rem;
+                font-size: 0.9rem;
+            }
+
+            /* 主页内容适配 */
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .hero-content img {
+                width: 150px;
+                height: 150px;
+            }
+
+            /* 作品卡片适配 */
+            .project-card {
+                flex-direction: column;
+                padding: 1rem;
+            }
+
+            .project-card img {
+                width: 100%;
+                height: 200px;
+                order: -1;  /* 图片显示在上方 */
+            }
+
+            .project-content {
+                padding: 1rem 0;
+            }
+
+            /* 联系方式适配 */
+            .contact-info {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .contact-item {
+                width: 100%;
+                justify-content: center;
+            }
+
+            /* 经历时间线适配 */
+            .timeline::before {
+                left: 20px;  /* 时间线靠左 */
+            }
+
+            .timeline-item {
+                flex-direction: column;
+                padding-left: 40px;
+            }
+
+            .timeline-content {
+                width: 100%;
+            }
+
+            .timeline-dot {
+                left: 20px;
+            }
+
+            .timeline-item:nth-child(even) {
+                flex-direction: column;
+            }
+
+            /* 技能标签适配 */
+            .tag {
+                font-size: 0.9rem;
+                padding: 0.4rem 0.8rem;
+                margin: 0.3rem;
+            }
+
+            /* 模态框适配 */
+            .modal-gallery {
+                padding: 0 60px;  /* 减小滚动区域宽度 */
+            }
+
+            .scroll-area {
+                width: 60px;
+            }
+
+            .modal-gallery img,
+            .modal-gallery video {
+                height: 40vh;  /* 减小图片高度 */
+            }
+
+            .scroll-progress-container {
+                width: 80%;  /* 增加进度条宽度 */
+                bottom: 20px;
+            }
+
+            /* 关于我部分适配 */
+            .text-lg {
+                font-size: 1rem;
+                padding: 0 1rem;
+            }
+
+            /* 下载简历按钮适配 */
+            .download-resume {
+                padding: 0.8rem 1.5rem;
+                font-size: 1rem;
+            }
+        }
+
+        /* 小屏幕适配 */
+        @media (max-width: 480px) {
+            .nav-links a {
+                padding: 0.2rem 0.5rem;
+                font-size: 0.8rem;
+            }
+
+            .hero-content img {
+                width: 120px;
+                height: 120px;
+            }
+
+            .section {
+                padding: 3rem 1rem;
+            }
         }
     </style>
 </head>
@@ -1121,7 +1257,7 @@
             <div class="project-card">
                 <div class="project-content">
                     <h3>AI静态艺术作品</h3>
-                    <p>运用Stable Diffusion、Midjourney等AI工具，探索人工智能与艺术创作的边界，创作具有独特美学风格的静态作品。</p>
+                    <p>运用Stable Diffusion、Midjourney等AI工具，探索人工智���与艺术创作的边界，创作具有独特美学风格的静态作品。</p>
                     <div class="tags">
                         <span class="tag">Stable Diffusion</span>
                         <span class="tag">Midjourney</span>
@@ -1242,7 +1378,7 @@
             navLinks.forEach(link => {
                 if (link.getAttribute('href').slice(1) === current) {
                     if (!link.classList.contains('active')) {
-                        // 添加过渡动画
+                        // ��加过渡动画
                         link.style.transition = 'all 0.5s cubic-bezier(0.4, 0, 0.2, 1)';
                         link.classList.add('active');
                     }
